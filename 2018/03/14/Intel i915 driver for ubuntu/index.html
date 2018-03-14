@@ -100,30 +100,28 @@
 
 
   
-  <meta name="keywords" content="test,first one," />
+  <meta name="keywords" content="linux,driver,uhd630,显卡驱动," />
 
 
-<meta name="description" content="hello 大家好啊，这是我的第一篇博客，测试用的 Test水何澹澹山岛竦峙">
-<meta name="keywords" content="test,first one">
+<meta name="description" content="Intel i915 系列核显的驱动问题 前几天换了个8代i7的cpu和配套主板，装了双系统，Windows+LinuxMint，然后喜闻乐见地出现了驱动问题。Mint开机之后一直提示处于软渲染模式下，分辨率也只有1024x768没法调。装了个Intel的Intel Graphics Update Tool for Linux也没有用，检查的时候就卡住了。12345Running in softw">
+<meta name="keywords" content="linux,driver,uhd630,显卡驱动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="https://gf47.github.io/2018/03/09/test/index.html">
+<meta property="og:title" content="Intel i915 driver for ubuntu">
+<meta property="og:url" content="https://gf47.github.io/2018/03/14/Intel i915 driver for ubuntu/index.html">
 <meta property="og:site_name" content="GF47的鱼缸">
-<meta property="og:description" content="hello 大家好啊，这是我的第一篇博客，测试用的 Test水何澹澹山岛竦峙">
+<meta property="og:description" content="Intel i915 系列核显的驱动问题 前几天换了个8代i7的cpu和配套主板，装了双系统，Windows+LinuxMint，然后喜闻乐见地出现了驱动问题。Mint开机之后一直提示处于软渲染模式下，分辨率也只有1024x768没法调。装了个Intel的Intel Graphics Update Tool for Linux也没有用，检查的时候就卡住了。12345Running in softw">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://gf47.github.io/2018/03/09/test/Logo.jpg">
-<meta property="og:updated_time" content="2018-03-09T14:44:27.078Z">
+<meta property="og:updated_time" content="2018-03-13T22:53:31.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="hello 大家好啊，这是我的第一篇博客，测试用的 Test水何澹澹山岛竦峙">
-<meta name="twitter:image" content="https://gf47.github.io/2018/03/09/test/Logo.jpg">
+<meta name="twitter:title" content="Intel i915 driver for ubuntu">
+<meta name="twitter:description" content="Intel i915 系列核显的驱动问题 前几天换了个8代i7的cpu和配套主板，装了双系统，Windows+LinuxMint，然后喜闻乐见地出现了驱动问题。Mint开机之后一直提示处于软渲染模式下，分辨率也只有1024x768没法调。装了个Intel的Intel Graphics Update Tool for Linux也没有用，检查的时候就卡住了。12345Running in softw">
 
 
 
 
 
 
-  <link rel="canonical" href="https://gf47.github.io/2018/03/09/test/"/>
+  <link rel="canonical" href="https://gf47.github.io/2018/03/14/Intel i915 driver for ubuntu/"/>
 
 
 
@@ -132,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>test | GF47的鱼缸</title>
+  <title>Intel i915 driver for ubuntu | GF47的鱼缸</title>
   
 
 
@@ -279,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gf47.github.io/2018/03/09/test/">
+    <link itemprop="mainEntityOfPage" href="https://gf47.github.io/2018/03/14/Intel i915 driver for ubuntu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GF47">
@@ -296,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test</h1>
+          <h1 class="post-title" itemprop="name headline">Intel i915 driver for ubuntu</h1>
         
 
         <div class="post-meta">
@@ -308,7 +306,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T20:36:59+08:00">2018-03-09</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T18:07:54+08:00">2018-03-14</time>
             
 
             
@@ -325,7 +323,7 @@
 
           
           
-             <span id="/2018/03/09/test/" class="leancloud_visitors" data-flag-title="test">
+             <span id="/2018/03/14/Intel i915 driver for ubuntu/" class="leancloud_visitors" data-flag-title="Intel i915 driver for ubuntu">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -356,8 +354,25 @@
       
 
       
-        <p>hello 大家好啊，这是我的第一篇博客，测试用的</p>
-<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h3 id="水何澹澹山岛竦峙"><a href="#水何澹澹山岛竦峙" class="headerlink" title="水何澹澹山岛竦峙"></a>水何澹澹山岛竦峙</h3><p><img src="/2018/03/09/test/Logo.jpg" alt="test image"></p>
+        <h1 id="Intel-i915-系列核显的驱动问题"><a href="#Intel-i915-系列核显的驱动问题" class="headerlink" title="Intel i915 系列核显的驱动问题"></a>Intel i915 系列核显的驱动问题</h1><hr>
+<p>前几天换了个8代i7的cpu和配套主板，装了双系统，Windows+LinuxMint，然后喜闻乐见地出现了驱动问题。<br>Mint开机之后一直提示处于软渲染模式下，分辨率也只有1024x768没法调。装了个Intel的<strong>Intel Graphics Update Tool for Linux</strong>也没有用，检查的时候就卡住了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Running in software rendering mode</span><br><span class="line"></span><br><span class="line">Cinnamon is currently running without video hardware acceleration and, as a result, you may observe much higher than normal cpu usage.</span><br><span class="line"></span><br><span class="line">There could be a problem with you drivers or some other issue. For the best experience, it is recommended that you only use this mode for troubleshooting purposes.</span><br></pre></td></tr></table></figure></p>
+<p>原来Ubuntu把Intel i915系列的驱动改为了alpha测试版，装系统时直接被忽略掉了。想安驱动需要在grub阶段加入内核参数：i915.alpha_support=1。</p>
+<blockquote>
+<p>参考：<br><a href="https://ubuntuforums.org/showthread.php?t=2377324" target="_blank" rel="noopener">New PC Build - Ubuntu Not Using Intel Video Driver</a><br><a href="https://www.phoronix.com/scan.php?page=article&amp;item=coffee-uhd-graphics&amp;num=1" target="_blank" rel="noopener">Intel UHD Graphics 630 “Coffee Lake” On Linux</a></p>
+</blockquote>
+<p>解决方式：</p>
+<ul>
+<li><p>Install the latest video drivers:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:oibaf/graphics-drivers</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install and use Grub Customizer to do it:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:danielrichter2007/grub-customizer</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install grub-customizer</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Launch grub customizer, go to the General tab, and enter i915.alpha_support=1 under Kernel Parameters.</p>
+</li>
+<li>Reboot.</li>
+</ul>
+<p>其中第一步是添加第三方驱动的源，第二步和第三步可以用其他方式代替，只要保证在启动的时候有<code>i915.alpha_support=1</code>这个参数就行。</p>
 
       
     </div>
@@ -378,9 +393,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
-            <a href="/tags/first-one/" rel="tag"># first one</a>
+            <a href="/tags/driver/" rel="tag"># driver</a>
+          
+            <a href="/tags/uhd630/" rel="tag"># uhd630</a>
+          
+            <a href="/tags/显卡驱动/" rel="tag"># 显卡驱动</a>
           
         </div>
       
@@ -389,6 +408,26 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/09/在树莓派上搭建Gogs服务/" rel="next" title="在树莓派上搭建Gogs服务">
+                <i class="fa fa-chevron-left"></i> 在树莓派上搭建Gogs服务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/14/Hexo博客/" rel="prev" title="使用Hexo搭建github博客">
+                使用Hexo搭建github博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -463,12 +502,25 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
 
               
@@ -482,7 +534,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -532,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">1.</span> <span class="nav-text">Test</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水何澹澹山岛竦峙"><span class="nav-number">1.1.</span> <span class="nav-text">水何澹澹山岛竦峙</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Intel-i915-系列核显的驱动问题"><span class="nav-number">1.</span> <span class="nav-text">Intel i915 系列核显的驱动问题</span></a></li></ol></div>
             
 
           </div>
