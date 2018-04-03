@@ -757,7 +757,7 @@
 <li>首页<a href="https://gogs.io" target="_blank" rel="noopener">https://gogs.io</a></li>
 <li>下载<a href="https://gogs.io/docs/installation/install_from_binary" target="_blank" rel="noopener">https://gogs.io/docs/installation/install_from_binary</a></li>
 </ul>
-<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>gogs是用go语言编写的，树莓派的Raspbian系统是有go运行环境的，而且gogs也提供了树莓派版本，直接下载就好。<br><img src="/2018/03/09/在树莓派上搭建Gogs服务/download.png" alt="下载位置"></p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>gogs是用go语言编写的，树莓派的Raspbian系统是有go运行环境的，而且gogs也提供了树莓派版本，直接下载就好。<br><img src="在树莓派上搭建Gogs服务/download.png" alt="下载位置"></p>
 <ul>
 <li>解压缩到指定位置 <code>unzip raspi2_armv6.zip</code></li>
 <li>转到目录<code>cd gogs</code></li>
@@ -1149,6 +1149,19 @@
 
 
 
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+
+
 
 
 
@@ -1233,9 +1246,25 @@
             });
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set 'security' option to 'false'.');
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
             
           }
         },

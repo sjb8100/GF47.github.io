@@ -111,12 +111,12 @@
 <meta property="og:site_name" content="GF47的鱼缸">
 <meta property="og:description" content="新到手了一个树莓派板子，省电又不占地方，遂玩耍一番。 为什么选择Gogs而不是GitLab，很明显，以GitLab的量级来说，相当于津巴布韦总统捏着一颗核弹，一搭好，这个板子就可以放那吃灰了。而Gogs这种小当量的玩意，对树莓派来说刚好合适。 在树莓派上搭建Gogs服务 Gogs 首页https://gogs.io 下载https://gogs.io/docs/installation/insta">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://gf47.github.io/2018/03/09/在树莓派上搭建Gogs服务/download.png">
+<meta property="og:image" content="https://gf47.github.io/2018/03/09/在树莓派上搭建Gogs服务/在树莓派上搭建Gogs服务/download.png">
 <meta property="og:updated_time" content="2018-03-14T09:49:57.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在树莓派上搭建Gogs服务">
 <meta name="twitter:description" content="新到手了一个树莓派板子，省电又不占地方，遂玩耍一番。 为什么选择Gogs而不是GitLab，很明显，以GitLab的量级来说，相当于津巴布韦总统捏着一颗核弹，一搭好，这个板子就可以放那吃灰了。而Gogs这种小当量的玩意，对树莓派来说刚好合适。 在树莓派上搭建Gogs服务 Gogs 首页https://gogs.io 下载https://gogs.io/docs/installation/insta">
-<meta name="twitter:image" content="https://gf47.github.io/2018/03/09/在树莓派上搭建Gogs服务/download.png">
+<meta name="twitter:image" content="https://gf47.github.io/2018/03/09/在树莓派上搭建Gogs服务/在树莓派上搭建Gogs服务/download.png">
 
 
 
@@ -339,6 +339,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/09/在树莓派上搭建Gogs服务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/09/在树莓派上搭建Gogs服务/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -381,7 +391,7 @@
 <li>首页<a href="https://gogs.io" target="_blank" rel="noopener">https://gogs.io</a></li>
 <li>下载<a href="https://gogs.io/docs/installation/install_from_binary" target="_blank" rel="noopener">https://gogs.io/docs/installation/install_from_binary</a></li>
 </ul>
-<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>gogs是用go语言编写的，树莓派的Raspbian系统是有go运行环境的，而且gogs也提供了树莓派版本，直接下载就好。<br><img src="/2018/03/09/在树莓派上搭建Gogs服务/download.png" alt="下载位置"></p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>gogs是用go语言编写的，树莓派的Raspbian系统是有go运行环境的，而且gogs也提供了树莓派版本，直接下载就好。<br><img src="在树莓派上搭建Gogs服务/download.png" alt="下载位置"></p>
 <ul>
 <li>解压缩到指定位置 <code>unzip raspi2_armv6.zip</code></li>
 <li>转到目录<code>cd gogs</code></li>
@@ -505,6 +515,13 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -831,6 +848,43 @@
 
 
 
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'GF47',
+            repo: 'git@github.com:GF47/GF47.github.io.git',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'a76863c005088aaee06938aa51568881d68d0ddf',
+            
+                client_id: '2cb9102aa0bdd5e94fb1'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
 
 
 
@@ -915,9 +969,25 @@
             });
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set 'security' option to 'false'.');
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
             
           }
         },
